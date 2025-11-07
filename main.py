@@ -2,8 +2,8 @@ import flet as ft
 
 
 def main_page(page: ft.Page):
-    page.title = 'Мое первое приложение'
-    greeting_text = ft.Text(value='Hello world')
+    page.title = 'My first app'
+    greeting_text = ft.Text(value='Welcome to my first app')
 
     def on_button_click(_):
         name = name_input.value.strip()
@@ -30,9 +30,9 @@ def main_page(page: ft.Page):
             greeting_text.color = ft.Colors.RED
 
         page.update()
-    hour_input = ft.TextField(label='Введите time', on_submit=on_button_click)
-    minut_input = ft.TextField(label='Введите minute', on_submit=on_button_click)
-    name_input = ft.TextField(label='Введите имя', on_submit=on_button_click)
+    hour_input = ft.TextField(label='text the hour', on_submit=on_button_click)
+    minut_input = ft.TextField(label='text the minute', on_submit=on_button_click)
+    name_input = ft.TextField(label='text your name', on_submit=on_button_click)
     input_button_text = ft.TextButton(text='send', icon=ft.Icons.SEND_ROUNDED, on_click=on_button_click)
 
 
