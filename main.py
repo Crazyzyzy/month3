@@ -13,20 +13,24 @@ def main_page(page: ft.Page):
         if name:
             greeting_text.color = None
             name_input.value = None
-            if 11 >= int(hour) >= 6 and 59 >= int(minut) >= 0:
-                greeting_text.value = f'Good morning {name}'
-            elif 17 >= int(hour) >= 12 and 59 >= int(minut) >= 0:
-                greeting_text.value = f'Good day {name}'
-            elif 23 >= int(hour) >= 18 and 59 >= int(minut) >= 0:
-                greeting_text.value = f'Good evening {name}'
-            elif 6 >= int(hour) >= 0 and 59 >= int(minut) >= 0:
-                greeting_text.value = f'Good night {name}'
+            if hour.isdigit() and minut.isdigit():
+                if 11 >= int(hour) >= 6 and 59 >= int(minut) >= 0:
+                    greeting_text.value = f'Good morning {name}'
+                elif 17 >= int(hour) >= 12 and 59 >= int(minut) >= 0:
+                    greeting_text.value = f'Good day {name}'
+                elif 23 >= int(hour) >= 18 and 59 >= int(minut) >= 0:
+                    greeting_text.value = f'Good evening {name}'
+                elif 6 >= int(hour) >= 0 and 59 >= int(minut) >= 0:
+                    greeting_text.value = f'Good night {name}'
+                else:
+                    greeting_text.value = f'Problems with time'
+                    greeting_text.color = ft.Colors.RED
             else:
-                greeting_text.value = f'Problems with time'
+                greeting_text.value = f'eror with input time please try one more time'
                 greeting_text.color = ft.Colors.RED
         
         else:
-            greeting_text.value = f'Eror with name try one more time'
+            greeting_text.value = f'Eror with input please try one more time'
             greeting_text.color = ft.Colors.RED
 
         page.update()
